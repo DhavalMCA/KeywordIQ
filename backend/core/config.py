@@ -17,6 +17,7 @@ class Settings(BaseSettings):
         "http://localhost:3001",
     ]
     RAILWAY_PUBLIC_DOMAIN: str = ""
+    RENDER_EXTERNAL_URL: str = ""
 
 
 settings = Settings()
