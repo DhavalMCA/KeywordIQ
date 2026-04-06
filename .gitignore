@@ -26,3 +26,12 @@ dist/
 # Project specific
 .code-review-graph/
 .gemini/
+
+# Environment files (keep examples, remove locals)
+backend/.env
+frontend/.env.local
+!.env.example
+!backend/.env.example
+
+# Claude Code local settings
+.claude/settings.local.json
