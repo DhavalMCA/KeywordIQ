@@ -1,0 +1,43 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "WebFetch(domain:github.com)",
+      "mcp__github__get_file_contents",
+      "mcp__github__list_commits",
+      "Bash(pip install:*)",
+      "Bash(code-review-graph install:*)",
+      "Bash(python:*)",
+      "Bash(pip index:*)",
+      "Bash(py:*)",
+      "Bash(.venv/Scripts/python.exe -m pip install -r requirements.txt)",
+      "Bash(.venv/Scripts/python.exe -m pip freeze)",
+      "Bash(.venv/Scripts/python.exe -m uvicorn main:app --reload --port 8000)",
+      "Bash(curl -s http://localhost:8000/health)",
+      "Bash(.venv/Scripts/python.exe -m uvicorn main:app --port 8000)",
+      "Bash(.venv/Scripts/python.exe -c \"from main import app; print\\('OK'\\)\")",
+      "Bash(npm run:*)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000)",
+      "Bash(curl:*)",
+      "Bash(.venv/Scripts/python.exe -c ':*)",
+      "Bash(.venv/Scripts/python -m uvicorn main:app --host 0.0.0.0 --port 8000)",
+      "WebFetch(domain:stitch.dev)",
+      "WebFetch(domain:stitchapp.com)",
+      "WebSearch",
+      "WebFetch(domain:stitch.withgoogle.com)",
+      "Bash(find \"D:/Dhaval Prajapati/KeywordIQ/frontend/features\" -name \"*.tsx\" -exec grep -l \"text-on-background/20\" {} \\\\;)",
+      "Bash(xargs sed:*)",
+      "Bash(xargs -I{} sed -i 's/placeholder:text-outline-variant\\\\/30/placeholder:text-on-background\\\\/40/g; s/placeholder:text-outline-variant\\\\/40/placeholder:text-on-background\\\\/40/g' {})",
+      "Bash(grep -l \"uppercase\\\\|tracking-widest\" *.tsx)",
+      "Bash(sed:*)",
+      "Bash(netstat -ano)",
+      "Bash(taskkill /PID 16452 /F)",
+      "Bash(start /B .venv/Scripts/python -m uvicorn main:app --host 0.0.0.0 --port 8000)",
+      "Bash(cmd //c \"taskkill /PID 16452 /F\")"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "code-review-graph"
+  ]
+}

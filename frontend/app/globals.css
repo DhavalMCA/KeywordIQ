@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 240 14% 4%;
+  --surface-dim: 240 13% 7%;
+  --surface: 240 13% 7%;
+  --surface-bright: 240 6% 23%;
+  --surface-container-lowest: 240 14% 6%;
+  --surface-container-low: 240 10% 11%;
+  --surface-container: 240 9% 13%;
+  --surface-container-high: 240 8% 17%;
+  --surface-container-highest: 240 6% 21%;
+  
+  --on-background: 240 10% 90%;
+  --on-surface: 240 10% 82%;
+  --on-surface-variant: 270 5% 72%;
+  
+  --primary: 258 100% 87%;
+  --on-primary: 258 87% 31%;
+  --primary-container: 259 54% 56%;
+  --on-primary-container: 258 100% 96%;
+  
+  --secondary: 167 83% 65%;
+  --on-secondary: 167 100% 11%;
+  --secondary-container: 168 100% 44%;
+  --on-secondary-container: 167 100% 16%;
+  
+  --tertiary: 35 100% 65%;
+  --on-tertiary: 38 100% 14%;
+  --tertiary-container: 38 100% 52%;
+  --on-tertiary-container: 34 100% 91%;
+  
+  --error: 4 100% 84%;
+  --on-error: 3 100% 20%;
+  --error-container: 3 100% 29%;
+  --on-error-container: 3 100% 93%;
+  
+  --outline: 260 7% 58%;
+  --outline-variant: 252 7% 30%;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-background font-body;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .hero-gradient {
+    background: 
+      radial-gradient(circle at 50% -20%, rgba(110, 86, 207, 0.2) 0%, transparent 60%),
+      radial-gradient(circle at 100% 50%, rgba(65, 238, 194, 0.05) 0%, transparent 40%),
+      radial-gradient(circle at 0% 100%, rgba(255, 179, 102, 0.05) 0%, transparent 40%);
+  }
+  
+  .editorial-focus {
+    box-shadow: 0 0 80px -20px rgba(110, 86, 207, 0.3);
+  }
+  
+  .glass {
+    @apply bg-background/60 backdrop-blur-xl border border-outline-variant/10;
+  }
+  
+  .text-premium {
+    @apply font-headline font-black tracking-tighter uppercase;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--background); }
+::-webkit-scrollbar-thumb { 
+  background: hsl(var(--outline-variant)); 
+  border-radius: 10px; 
+}
+::-webkit-scrollbar-thumb:hover { 
+  background: hsl(var(--primary)); 
+}
+
+/* Material Symbols sizing */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
