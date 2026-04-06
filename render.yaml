@@ -1,0 +1,31 @@
+services:
+  # Backend API
+  - type: web
+    name: keywordiq-backend
+    env: python
+    dockerfilePath: backend/Dockerfile
+    region: oregon
+    plan: free
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_KEY
+        sync: false
+    healthCheckPath: /health
+
+  # Frontend
+  - type: web
+    name: keywordiq-frontend
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: cd frontend && npm install && npm run build
+    startCommand: cd frontend && npm start
+    envVars:
+      - key: NEXT_PUBLIC_API_URL
+        value: https://keywordiq-backend.onrender.com/api
+    routes:
+      - path: /api
+        destination: keywordiq-backend
