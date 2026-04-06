@@ -1,8 +1,6 @@
 "use client"
 
 import {
-  LineChart,
-  Line,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -10,9 +8,6 @@ import {
   ResponsiveContainer,
   AreaChart,
   Area,
-  Defs,
-  LinearGradient,
-  Stop
 } from "recharts"
 import type { InterestDataPoint } from "@/lib/validators"
 
