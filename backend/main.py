@@ -33,6 +33,14 @@ def create_app() -> FastAPI:
     def health_check():
         return {"status": "ok", "version": "1.0.0"}
 
+    @app.get("/debug")
+    def debug_check():
+        return {
+            "groq_key_set": bool(settings.GROQ_API_KEY),
+            "supabase_url_set": bool(settings.SUPABASE_URL),
+            "supabase_key_set": bool(settings.SUPABASE_KEY),
+        }
+
     return app
 
 
