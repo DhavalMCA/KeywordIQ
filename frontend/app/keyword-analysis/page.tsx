@@ -23,7 +23,7 @@ export default function KeywordAnalysisPage() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] border border-on-background/5 rounded-full pointer-events-none opacity-50" />
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 blur-[120px] rounded-full pointer-events-none -translate-y-1/2 translate-x-1/4" />
       
-      <main className="relative z-10 flex-1 flex flex-col items-center justify-center px-8 -mt-24 text-center">
+      <main className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 sm:px-6 pt-8 pb-16 sm:pt-16 sm:pb-24 text-center overflow-hidden">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -37,7 +37,7 @@ export default function KeywordAnalysisPage() {
             </span>
           </div>
           
-          <h1 className="text-6xl md:text-8xl font-black font-headline tracking-tighter text-on-background uppercase mb-6 leading-none">
+          <h1 className="text-4xl sm:text-5xl md:text-8xl font-black font-headline tracking-tighter text-on-background uppercase mb-4 sm:mb-6 leading-none">
             Keyword<br />
             <span className="text-secondary opacity-80 underline decoration-secondary/20 underline-offset-8">Analysis</span>
           </h1>
@@ -90,7 +90,7 @@ export default function KeywordAnalysisPage() {
           </div>
           
           {/* Status Indicators */}
-          <div className="mt-12 flex justify-center gap-16">
+          <div className="mt-8 sm:mt-12 flex justify-center gap-6 sm:gap-10 md:gap-16 flex-wrap">
               <div className="flex flex-col items-center gap-2">
                   <span className="text-[10px] font-black text-on-background/50 uppercase tracking-[0.2em]">Pkt Latency</span>
                   <span className="text-[10px] font-mono text-secondary font-bold tracking-widest">12.4ms</span>

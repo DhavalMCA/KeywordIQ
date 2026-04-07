@@ -26,6 +26,11 @@ Return ONLY a JSON array of strings, nothing else. Example: ["keyword1", "keywor
         )
         content = response.choices[0].message.content or "[]"
         import json
+        # Strip markdown code blocks if present
+        content = content.strip()
+        if content.startswith("```"):
+            lines = content.split("\n")
+            content = "\n".join(lines[1:-1] if lines[-1] == "```" else lines[1:])
         tags = json.loads(content)
         if isinstance(tags, list):
             return [str(t) for t in tags if t]
@@ -61,6 +66,11 @@ Example for Instagram: ["#keyword1", "#keyword2", ...]"""
         )
         content = response.choices[0].message.content or "[]"
         import json
+        # Strip markdown code blocks if present
+        content = content.strip()
+        if content.startswith("```"):
+            lines = content.split("\n")
+            content = "\n".join(lines[1:-1] if lines[-1] == "```" else lines[1:])
         hashtags = json.loads(content)
         if isinstance(hashtags, list):
             return [str(h) for h in hashtags if h]
@@ -95,6 +105,11 @@ Keep each value under 60 characters for title and 155 for description. Be concis
         )
         content = response.choices[0].message.content or "{}"
         import json
+        # Strip markdown code blocks if present
+        content = content.strip()
+        if content.startswith("```"):
+            lines = content.split("\n")
+            content = "\n".join(lines[1:-1] if lines[-1] == "```" else lines[1:])
         tags = json.loads(content)
         if isinstance(tags, dict):
             return {k: str(v) for k, v in tags.items()}

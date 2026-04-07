@@ -5,7 +5,7 @@ export default function HomePage() {
   return (
     <div className="flex flex-col pt-[56px] min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-[85vh] flex flex-col items-center justify-center py-24 px-8 text-center overflow-hidden hero-gradient">
+      <section className="relative min-h-[85vh] flex flex-col items-center justify-center py-16 sm:py-24 px-4 sm:px-6 text-center overflow-hidden hero-gradient">
         {/* Background Decorative Element */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
         
@@ -17,7 +17,7 @@ export default function HomePage() {
             </span>
           </div>
 
-          <h1 className="text-6xl md:text-8xl font-black font-headline tracking-tighter text-on-background leading-none mb-10 uppercase">
+          <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-8xl font-black font-headline tracking-tighter text-on-background leading-none mb-6 sm:mb-10 uppercase">
             Five tools.<br />
             <span className="text-primary select-none underline decoration-secondary/30 underline-offset-8">One search.</span>
           </h1>
@@ -47,7 +47,7 @@ export default function HomePage() {
       </section>
 
       {/* Feature Grid */}
-      <section className="bg-surface-container-lowest w-full py-32 border-y border-outline-variant/10 px-8">
+      <section className="bg-surface-container-lowest w-full py-16 sm:py-24 md:py-32 border-y border-outline-variant/10 px-4 sm:px-6 md:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-20">
              <div className="max-w-2xl">
@@ -66,7 +66,7 @@ export default function HomePage() {
               <Link
                 key={tool.href}
                 href={tool.href}
-                className="group bg-surface-container-low hover:bg-surface-container border border-outline-variant/10 hover:border-primary/20 p-8 rounded-xl transition-all duration-300 relative overflow-hidden"
+                className="group bg-surface-container-low hover:bg-surface-container border border-outline-variant/10 hover:border-primary/20 p-5 sm:p-6 md:p-8 rounded-xl transition-all duration-300 relative overflow-hidden"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
                 <div className="flex items-start justify-between mb-8">
@@ -90,18 +90,18 @@ export default function HomePage() {
       </section>
 
       {/* How It Works */}
-      <section className="py-32 px-8 bg-background relative overflow-hidden">
+      <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-8 bg-background relative overflow-hidden">
         <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-secondary/5 blur-[150px] rounded-full pointer-events-none translate-x-1/2 translate-y-1/2" />
-        
+
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-24">
+          <div className="text-center mb-12 sm:mb-16 md:mb-24">
             <span className="text-[10px] font-black text-secondary uppercase block mb-4">Protocol</span>
-            <h2 className="text-4xl md:text-5xl font-black font-headline text-on-background uppercase tracking-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-headline text-on-background uppercase tracking-tight">
               Ingestion to Insight
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
             {steps.map((step, i) => (
               <div key={step.title} className="relative group">
                 <div className="text-8xl font-black font-headline text-outline-variant/5 absolute -top-12 -left-4 select-none group-hover:text-primary/10 transition-colors">

@@ -22,7 +22,7 @@ export default function YouTubeFinderPage() {
   return (
     <div className="flex flex-col pt-[56px] bg-background min-h-screen">
       {/* Search Header */}
-      <section className="relative py-32 px-8 border-b border-outline-variant/10 overflow-hidden hero-gradient">
+      <section className="relative py-16 sm:py-24 md:py-32 px-4 sm:px-6 border-b border-outline-variant/10 overflow-hidden hero-gradient">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-secondary/5 blur-[120px] rounded-full pointer-events-none" />
         
         <div className="relative z-10 max-w-5xl mx-auto text-center">
@@ -37,7 +37,7 @@ export default function YouTubeFinderPage() {
             </span>
           </motion.div>
 
-          <h1 className="text-6xl md:text-8xl font-black font-headline tracking-tighter text-on-background leading-none mb-10 uppercase">
+          <h1 className="text-4xl sm:text-5xl md:text-8xl font-black font-headline tracking-tighter text-on-background leading-none mb-8 sm:mb-10 uppercase">
             YouTube<br />
             <span className="text-secondary select-none underline decoration-secondary/20 underline-offset-8">Explorer</span>
           </h1>
@@ -83,7 +83,7 @@ export default function YouTubeFinderPage() {
       </section>
 
       {/* Results Content */}
-      <main className="py-24 px-8 max-w-7xl mx-auto w-full">
+      <main className="py-16 sm:py-24 px-4 sm:px-6 max-w-7xl mx-auto w-full overflow-x-hidden">
         {isLoading && (
           <div className="flex flex-col items-center justify-center py-32 text-center">
              <div className="w-16 h-16 relative mb-8">
@@ -106,12 +106,12 @@ export default function YouTubeFinderPage() {
         )}
         
         {data && !isLoading && (
-          <div className="grid grid-cols-1 xl:grid-cols-12 gap-12">
+          <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 xl:gap-12 overflow-x-hidden">
             <div className="xl:col-span-4 space-y-12">
                <motion.div 
                  initial={{ opacity: 0, x: -20 }}
                  animate={{ opacity: 1, x: 0 }}
-                 className="bg-surface-container-low border border-outline-variant/10 p-8 rounded-3xl relative overflow-hidden"
+                 className="bg-surface-container-low border border-outline-variant/10 p-4 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl relative overflow-hidden"
                >
                  <div className="absolute top-0 left-0 w-1 h-full bg-secondary/30" />
                  <div className="flex items-center gap-3 mb-8">
@@ -127,7 +127,7 @@ export default function YouTubeFinderPage() {
                  initial={{ opacity: 0, x: -20 }}
                  animate={{ opacity: 1, x: 0 }}
                  transition={{ delay: 0.1 }}
-                 className="p-8 bg-surface-container-lowest border border-outline-variant/10 rounded-3xl space-y-6"
+                 className="p-4 sm:p-6 md:p-8 bg-surface-container-lowest border border-outline-variant/10 rounded-2xl md:rounded-3xl space-y-6"
                >
                   <div className="flex flex-col gap-1">
                     <span className="text-[10px] font-black text-on-background/50 uppercase tracking-[0.3em]">Channel Insights</span>

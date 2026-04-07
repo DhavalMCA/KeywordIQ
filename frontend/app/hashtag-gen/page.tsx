@@ -21,7 +21,7 @@ export default function HashtagGenPage() {
   return (
     <div className="flex flex-col pt-[56px] bg-background min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-32 px-8 border-b border-outline-variant/10 overflow-hidden hero-gradient">
+      <section className="relative py-16 sm:py-24 md:py-32 px-4 sm:px-6 border-b border-outline-variant/10 overflow-hidden hero-gradient">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
         
         <div className="relative z-10 max-w-5xl mx-auto text-center">
@@ -36,7 +36,7 @@ export default function HashtagGenPage() {
             </span>
           </motion.div>
 
-          <h1 className="text-6xl md:text-8xl font-black font-headline tracking-tighter text-on-background leading-none mb-10 uppercase">
+          <h1 className="text-4xl sm:text-5xl md:text-8xl font-black font-headline tracking-tighter text-on-background leading-none mb-8 sm:mb-10 uppercase">
             Hashtag<br />
             <span className="text-secondary select-none underline decoration-secondary/20 underline-offset-8">Synthesizer</span>
           </h1>
@@ -53,7 +53,7 @@ export default function HashtagGenPage() {
       </section>
 
       {/* Results Content */}
-      <main className="py-24 px-8 max-w-5xl mx-auto w-full">
+      <main className="py-16 sm:py-24 px-4 sm:px-6 max-w-5xl mx-auto w-full overflow-x-hidden">
         {isLoading && (
           <div className="flex flex-col items-center justify-center py-32 text-center">
              <div className="w-16 h-16 relative mb-8">

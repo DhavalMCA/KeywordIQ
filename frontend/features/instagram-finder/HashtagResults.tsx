@@ -17,10 +17,10 @@ export function HashtagResults({ hashtags }: HashtagResultsProps) {
   }
 
   return (
-    <div className="bg-surface-container-low border border-outline-variant/10 p-8 rounded-3xl group relative overflow-hidden">
+    <div className="bg-surface-container-low border border-outline-variant/10 p-4 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl group relative overflow-hidden">
       <div className="absolute top-0 left-0 w-1 h-full bg-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity" />
       
-      <div className="flex items-center justify-between mb-10">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 sm:mb-10 gap-4">
         <div className="flex flex-col gap-1">
            <div className="flex items-center gap-3">
               <span className="material-symbols-outlined text-pink-500 text-lg">tag</span>
@@ -75,7 +75,7 @@ export function HashtagResults({ hashtags }: HashtagResultsProps) {
         </div>
       )}
 
-      <div className="mt-10 pt-6 border-t border-outline-variant/5 flex items-center justify-between">
+      <div className="mt-6 sm:mt-10 pt-4 sm:pt-6 border-t border-outline-variant/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
          <span className="text-[8px] font-black text-on-background/50">Cluster size: {hashtags.length} hashtags</span>
          <span className="text-[8px] font-bold text-on-background/10  italic font-body">Source: Index_v4_Insta_Sync</span>
       </div>
