@@ -1,17 +1,13 @@
 import asyncio
 
-import httpx
 from groq import Groq
 
 from api.instagram.schemas import InstagramHashtag, InstagramSearchResult, NicheCluster
-from api.keyword.services import groq_llm
 from core.config import settings
 
 
 async def search_instagram(keyword: str) -> InstagramSearchResult:
-    autocomplete_suggestions = await _fetch_google_autocomplete(keyword)
-    hashtags = [InstagramHashtag(tag=f"#{kw.replace(' ', '')}") for kw in autocomplete_suggestions[:20]]
-
+    hashtags = await _generate_keyword_hashtags(keyword)
     trending = await _fetch_trending_hashtags()
     niches = await _generate_niche_clusters(keyword)
 
@@ -22,22 +18,35 @@ async def search_instagram(keyword: str) -> InstagramSearchResult:
     )
 
 
-async def _fetch_google_autocomplete(keyword: str) -> list[str]:
-    sanitized = keyword.strip().replace(" ", "+")
-    url = f"https://suggestqueries.google.com/complete/search?q={sanitized}&client=firefox"
+async def _generate_keyword_hashtags(keyword: str) -> list[InstagramHashtag]:
+    """Generate hashtags directly related to the keyword using Groq."""
+    prompt = f"""You are an Instagram hashtag expert. Generate exactly 20 relevant hashtags for the keyword "{keyword}".
+These hashtags MUST all be directly related to "{keyword}" - they should be used by accounts posting about {keyword}.
+Return ONLY a JSON array of hashtag strings like: ["#keyword1", "#keyword2", ...]"""
 
     try:
-        async with httpx.AsyncClient(timeout=5.0) as client:
-            response = await client.get(url)
-            response.raise_for_status()
-            data = response.json()
+        client = Groq(api_key=settings.GROQ_API_KEY)
 
-        suggestions = []
-        if len(data) >= 2 and isinstance(data[1], list):
-            for item in data[1]:
-                if isinstance(item, str) and item.strip():
-                    suggestions.append(item.strip())
-        return suggestions
+        def sync_call():
+            return client.chat.completions.create(
+                model=settings.GROQ_MODEL,
+                messages=[{"role": "user", "content": prompt}],
+                temperature=0.8,
+                max_tokens=512,
+            )
+
+        response = await asyncio.wait_for(asyncio.to_thread(sync_call), timeout=10)
+        content = response.choices[0].message.content or "[]"
+        import json
+        # Strip markdown code blocks if present
+        content = content.strip()
+        if content.startswith("```"):
+            lines = content.split("\n")
+            content = "\n".join(lines[1:-1] if lines[-1] == "```" else lines[1:])
+        tags = json.loads(content)
+        if isinstance(tags, list):
+            return [InstagramHashtag(tag=tag if tag.startswith("#") else f"#{tag}") for tag in tags if tag]
+        return []
     except Exception:
         return []
 
@@ -52,8 +61,9 @@ async def _fetch_trending_hashtags() -> list[InstagramHashtag]:
 
 
 async def _generate_niche_clusters(keyword: str) -> list[NicheCluster]:
-    prompt = f"""You are an Instagram marketing expert. For the keyword "{keyword}", suggest 3 niche clusters.
-Each cluster should have a topic name and 8-10 related hashtags.
+    prompt = f"""You are an Instagram marketing expert. For the keyword "{keyword}", suggest exactly 3 niche clusters that are highly relevant to this keyword.
+Each cluster must have a topic name that is directly related to "{keyword}" and 8-10 specific hashtags that would be used by someone posting about "{keyword}".
+All hashtags MUST be related to "{keyword}" - do not include generic or unrelated hashtags.
 Return ONLY a valid JSON array like:
 [{{"topic": "Topic Name", "hashtags": ["#tag1", "#tag2", ...]}}, ...]"""
 
@@ -71,6 +81,11 @@ Return ONLY a valid JSON array like:
         response = await asyncio.wait_for(asyncio.to_thread(sync_call), timeout=10)
         content = response.choices[0].message.content or "[]"
         import json
+        # Strip markdown code blocks if present
+        content = content.strip()
+        if content.startswith("```"):
+            lines = content.split("\n")
+            content = "\n".join(lines[1:-1] if lines[-1] == "```" else lines[1:])
         clusters = json.loads(content)
         if isinstance(clusters, list):
             return [NicheCluster(**c) for c in clusters if isinstance(c, dict)]

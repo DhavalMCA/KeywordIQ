@@ -69,7 +69,7 @@ export function SearchBar() {
         </div>
       </form>
       
-      <div className="mt-4 flex items-center justify-center gap-6 px-4">
+      <div className="mt-4 flex items-center justify-center gap-3 sm:gap-6 px-4">
         <div className="flex items-center gap-2 grayscale group hover:grayscale-0 transition-all cursor-pointer">
           <span className="material-symbols-outlined text-xs text-secondary">trending_up</span>
           <span className="text-[10px] font-bold text-outline group-hover:text-secondary">Global trends</span>

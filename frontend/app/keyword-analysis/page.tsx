@@ -23,7 +23,7 @@ export default function KeywordAnalysisPage() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] border border-on-background/5 rounded-full pointer-events-none opacity-50" />
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 blur-[120px] rounded-full pointer-events-none -translate-y-1/2 translate-x-1/4" />
       
-      <main className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 sm:px-6 -mt-16 sm:-mt-24 text-center">
+      <main className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 sm:px-6 pt-8 pb-16 sm:pt-16 sm:pb-24 text-center overflow-hidden">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

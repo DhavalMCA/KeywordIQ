@@ -20,7 +20,7 @@ export default function AboutPage() {
             </span>
           </motion.div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-8xl font-black font-headline tracking-tighter text-on-background leading-none mb-8 sm:mb-10 uppercase">
+          <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-8xl font-black font-headline tracking-tighter text-on-background leading-none mb-6 sm:mb-10 uppercase">
             About<br />
             <span className="text-primary select-none underline decoration-primary/20 underline-offset-8">KeywordIQ</span>
           </h1>
@@ -32,7 +32,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <main className="py-16 sm:py-24 px-4 sm:px-6 md:px-10 max-w-5xl mx-auto w-full space-y-16 sm:space-y-24">
+      <main className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-10 max-w-5xl mx-auto w-full space-y-12 sm:space-y-16 md:space-y-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <motion.div 
             initial={{ opacity: 0, x: -20 }}

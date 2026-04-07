@@ -2,11 +2,11 @@ import Link from "next/link"
 
 export function Footer() {
   return (
-    <footer className="bg-surface-container-lowest w-full py-24 border-t border-outline-variant/5 mt-auto relative overflow-hidden">
+    <footer className="bg-surface-container-lowest w-full py-16 sm:py-20 md:py-24 border-t border-outline-variant/5 mt-auto relative overflow-hidden pb-20 lg:pb-0">
       <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-primary/5 blur-[100px] rounded-full pointer-events-none translate-x-1/2 -translate-y-1/2" />
 
-      <div className="max-w-7xl mx-auto px-10 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 pb-16 border-b border-outline-variant/5">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 pb-12 sm:pb-16 border-b border-outline-variant/5">
           <div className="lg:col-span-4 space-y-8">
             <div className="flex items-center gap-3 group">
               <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center rotate-45 group-hover:rotate-90 transition-transform duration-500">
