@@ -17,7 +17,7 @@ export default function ContactPage() {
 
   return (
     <div className="flex flex-col pt-[56px] bg-background min-h-screen">
-      <section className="py-24 px-8 text-center">
+      <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 text-center">
         <h1 className="text-4xl md:text-5xl font-bold text-on-background mb-4">
           Contact Us
         </h1>
@@ -26,7 +26,7 @@ export default function ContactPage() {
         </p>
       </section>
 
-      <section className="py-8 px-8 max-w-lg mx-auto w-full">
+      <section className="py-8 sm:py-12 px-4 sm:px-6 max-w-lg mx-auto w-full">
         {success ? (
           <div className="bg-surface-container-low border border-outline-variant/10 rounded-xl p-8 text-center">
             <p className="text-primary font-semibold mb-2">Message sent!</p>

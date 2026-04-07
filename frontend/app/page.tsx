@@ -5,7 +5,7 @@ export default function HomePage() {
   return (
     <div className="flex flex-col pt-[56px] min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-[85vh] flex flex-col items-center justify-center py-24 px-8 text-center overflow-hidden hero-gradient">
+      <section className="relative min-h-[85vh] flex flex-col items-center justify-center py-16 sm:py-24 px-4 sm:px-6 text-center overflow-hidden hero-gradient">
         {/* Background Decorative Element */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
         
@@ -17,7 +17,7 @@ export default function HomePage() {
             </span>
           </div>
 
-          <h1 className="text-6xl md:text-8xl font-black font-headline tracking-tighter text-on-background leading-none mb-10 uppercase">
+          <h1 className="text-4xl sm:text-5xl md:text-8xl font-black font-headline tracking-tighter text-on-background leading-none mb-8 sm:mb-10 uppercase">
             Five tools.<br />
             <span className="text-primary select-none underline decoration-secondary/30 underline-offset-8">One search.</span>
           </h1>

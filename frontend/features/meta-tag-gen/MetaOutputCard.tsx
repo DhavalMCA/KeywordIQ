@@ -20,10 +20,10 @@ export function MetaOutputCard({ label, value, onCopy, color = "text-primary" }:
   }
 
   return (
-    <div className="bg-surface-container-low border border-outline-variant/10 p-8 rounded-3xl group relative overflow-hidden transition-all hover:bg-surface-container">
+    <div className="bg-surface-container-low border border-outline-variant/10 p-4 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl group relative overflow-hidden transition-all hover:bg-surface-container">
       <div className="absolute top-0 left-0 w-1 h-full bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity" />
       
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 sm:mb-6 gap-3">
         <div className="flex items-center gap-3">
           <div className={`w-1.5 h-1.5 rounded-full ${color.replace('text-', 'bg-')}`} />
           <span className="text-[10px] font-black font-headline text-on-background/50  group-hover:text-on-background/60 transition-colors">{label}</span>

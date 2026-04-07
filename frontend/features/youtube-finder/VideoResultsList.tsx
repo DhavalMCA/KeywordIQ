@@ -36,7 +36,7 @@ export function VideoResultsList({ videos }: VideoResultsListProps) {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: idx * 0.05 }}
-          className="group flex flex-col md:flex-row md:items-center justify-between gap-8 bg-surface-container-low p-8 border border-outline-variant/5 hover:border-primary/20 hover:bg-surface-container transition-all duration-300 rounded-3xl relative overflow-hidden"
+          className="group flex flex-col md:flex-row md:items-center justify-between gap-6 sm:gap-8 bg-surface-container-low p-4 sm:p-6 md:p-8 border border-outline-variant/5 hover:border-primary/20 hover:bg-surface-container transition-all duration-300 rounded-2xl md:rounded-3xl relative overflow-x-hidden"
         >
           <div className="absolute top-0 left-0 w-1 h-full bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity" />
           
@@ -50,7 +50,7 @@ export function VideoResultsList({ videos }: VideoResultsListProps) {
               </div>
             </div>
             
-            <h3 className="text-xl font-black font-headline tracking-tight text-on-background uppercase group-hover:text-primary transition-colors mb-6 leading-tight max-w-2xl">
+            <h3 className="text-base sm:text-xl font-black font-headline tracking-tight text-on-background uppercase group-hover:text-primary transition-colors mb-4 sm:mb-6 leading-tight max-w-2xl overflow-x-hidden">
               {video.title}
             </h3>
             
@@ -71,7 +71,7 @@ export function VideoResultsList({ videos }: VideoResultsListProps) {
             </div>
           </div>
 
-          <div className="flex flex-row md:flex-col items-center md:items-end justify-between md:justify-center gap-6 md:border-l md:border-outline-variant/10 md:pl-12 min-w-[160px] relative z-10">
+          <div className="flex flex-row md:flex-col items-center md:items-end justify-between md:justify-center gap-4 sm:gap-6 md:border-l md:border-outline-variant/10 md:pl-8 lg:pl-12 min-w-[120px] sm:min-w-[160px] relative z-10">
              <div className="text-right space-y-1">
                 <span className="block text-[10px] font-black text-on-background/50 ">Imprint Vol</span>
                 <span className="block text-2xl font-black font-headline text-secondary tracking-tighter">

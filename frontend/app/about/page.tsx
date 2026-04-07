@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 export default function AboutPage() {
   return (
     <div className="flex flex-col pt-[56px] bg-background min-h-screen">
-      <section className="relative py-32 px-10 border-b border-outline-variant/10 overflow-hidden hero-gradient">
+      <section className="relative py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-10 border-b border-outline-variant/10 overflow-hidden hero-gradient">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
         
         <div className="relative z-10 max-w-5xl mx-auto">
@@ -20,7 +20,7 @@ export default function AboutPage() {
             </span>
           </motion.div>
 
-          <h1 className="text-6xl md:text-8xl font-black font-headline tracking-tighter text-on-background leading-none mb-10 uppercase">
+          <h1 className="text-4xl sm:text-5xl md:text-8xl font-black font-headline tracking-tighter text-on-background leading-none mb-8 sm:mb-10 uppercase">
             About<br />
             <span className="text-primary select-none underline decoration-primary/20 underline-offset-8">KeywordIQ</span>
           </h1>
@@ -32,12 +32,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <main className="py-24 px-10 max-w-5xl mx-auto w-full space-y-24">
+      <main className="py-16 sm:py-24 px-4 sm:px-6 md:px-10 max-w-5xl mx-auto w-full space-y-16 sm:space-y-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="p-10 bg-surface-container-low border border-outline-variant/10 rounded-3xl space-y-6 relative overflow-hidden group"
+            className="p-6 sm:p-8 md:p-10 bg-surface-container-low border border-outline-variant/10 rounded-2xl md:rounded-3xl space-y-6 relative overflow-hidden group"
           >
             <div className="absolute top-0 left-0 w-1 h-full bg-primary/30" />
             <div className="flex items-center gap-4">
@@ -56,7 +56,7 @@ export default function AboutPage() {
           <motion.div 
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="p-10 bg-surface-container-low border border-outline-variant/10 rounded-3xl space-y-6 relative overflow-hidden group"
+            className="p-6 sm:p-8 md:p-10 bg-surface-container-low border border-outline-variant/10 rounded-2xl md:rounded-3xl space-y-6 relative overflow-hidden group"
           >
             <div className="absolute top-0 left-0 w-1 h-full bg-secondary/30" />
             <div className="flex items-center gap-4">

@@ -20,10 +20,10 @@ export function PlatformBundle({ platform, hashtags, icon, color }: PlatformBund
   }
 
   return (
-    <div className="bg-surface-container-low border border-outline-variant/10 p-10 rounded-3xl group relative overflow-hidden transition-all hover:bg-surface-container">
+    <div className="bg-surface-container-low border border-outline-variant/10 p-4 sm:p-6 md:p-10 rounded-2xl md:rounded-3xl group relative overflow-hidden transition-all hover:bg-surface-container">
       <div className="absolute top-0 left-0 w-1 h-full bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity" />
       
-      <div className="flex flex-col md:flex-row md:items-center justify-between mb-10 gap-6 pb-6 border-b border-outline-variant/5">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 sm:mb-10 gap-4 sm:gap-6 pb-4 sm:pb-6 border-b border-outline-variant/5">
         <div className="flex items-center gap-4">
            <div className={`w-12 h-12 rounded-2xl bg-surface-container-highest flex items-center justify-center border border-outline-variant/10 ${color}`}>
               <span className="material-symbols-outlined text-2xl">{icon}</span>
@@ -68,7 +68,7 @@ export function PlatformBundle({ platform, hashtags, icon, color }: PlatformBund
         ))}
       </div>
       
-      <div className="mt-10 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity">
+      <div className="mt-6 sm:mt-10 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity">
          <span className="text-[8px] font-black text-on-background/10">Bundle density: Optimized</span>
          <span className="text-[8px] font-bold text-on-background/5  font-body">Ref: Platform_Ingest_v4.2.8</span>
       </div>
