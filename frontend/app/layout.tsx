@@ -42,7 +42,7 @@ export default function RootLayout({
       <body className="font-body bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
         <div className="flex flex-col min-h-screen">
           <Navbar />
-          <main className="flex-1 overflow-x-hidden">{children}</main>
+          <main className="flex-1 overflow-x-hidden pb-20 lg:pb-0">{children}</main>
           <Footer />
         </div>
       </body>
